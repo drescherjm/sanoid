@@ -1,4 +1,4 @@
-%global version 2.2.0
+%global version 2.2.0-r1
 %global git_tag v%{version}
 
 # Enable with systemctl "enable sanoid.timer"
@@ -6,7 +6,7 @@
 
 Name:		   sanoid
 Version:	   %{version}
-Release:	   3%{?dist}
+Release:	   1%{?dist}
 BuildArch:	   noarch
 Summary:	   A policy-driven snapshot management tool for ZFS file systems
 Group:		   Applications/System

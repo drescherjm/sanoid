@@ -6,7 +6,7 @@
 
 Name:		   sanoid
 Version:	   %{version}
-Release:	   1%{?dist}
+Release:	   3%{?dist}
 BuildArch:	   noarch
 Summary:	   A policy-driven snapshot management tool for ZFS file systems
 Group:		   Applications/System
@@ -68,7 +68,7 @@ cat > %{buildroot}%{_unitdir}/%{name}.timer <<EOF
 Description=Run Sanoid Every Minute
 
 [Timer]
-OnCalendar=*:0/1
+OnCalendar=*:0/15
 Persistent=true
 
 [Install]

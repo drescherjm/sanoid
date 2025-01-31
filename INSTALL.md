@@ -157,21 +157,21 @@ sudo systemctl enable --now sanoid.timer
 Now, proceed to configure [**Sanoid**](#configuration)
 
 **RPM Install**
-# Download the repo as a regular user
-git clone https://github.com/drescherjm/sanoid.git
 
-# Install rpm-build
+Download the repo as a regular user
+```bash
+git clone https://github.com/drescherjm/sanoid.git
+```
+Install rpm-build
 ```bash
 sudo dnf install rpm-build
 ```
-
-# Build the rpm:
+Build the rpm
 ```bash
 cd sanoid
 rpmbuild --undefine=_disable_source_fetch -ba packages/rhel/sanoid.spec
 ```
-
-# Install the rpm:
+Install the rpm:
 ```bash
  sudo dnf localinstall ~/rpmbuild/RPMS/noarch/sanoid-2.2.0.2-r1.el8.noarch.rpm
 ```

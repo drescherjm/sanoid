@@ -176,6 +176,8 @@ rpmbuild --undefine=_disable_source_fetch -ba packages/rhel/sanoid.spec
  sudo dnf localinstall ~/rpmbuild/RPMS/noarch/sanoid-2.2.0.2-r1.el8.noarch.rpm
 ```
 
+Now, proceed to configure [**Sanoid**](#configuration)
+
 ## FreeBSD
 
 Install prerequisite software:

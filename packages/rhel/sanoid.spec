@@ -1,5 +1,5 @@
-%global release 3
-%global version 2.2.0
+%global git_release 1
+%global version 2.2.0.2
 %global git_tag v%{version}
 
 # Enable with systemctl "enable sanoid.timer"
@@ -7,13 +7,13 @@
 
 Name:		   sanoid
 Version:	   %{version}
-Release:	   r%{release}%{?dist}
+Release:	   r%{git_release}%{?dist}
 BuildArch:	   noarch
 Summary:	   A policy-driven snapshot management tool for ZFS file systems
 Group:		   Applications/System
 License:	   GPLv3
 URL:		   https://github.com/drescherjm/sanoid
-Source0:	   https://github.com/drescherjm/%{name}/archive/%{git_tag}/%{name}-%{version}-%{release}.tar.gz
+Source0:	   https://github.com/drescherjm/%{name}/archive/%{git_tag}/%{name}-%{git_tag}.tar.gz
 
 Requires:	   perl, mbuffer, lzop, pv, perl-Config-IniFiles, perl-Capture-Tiny
 %if 0%{?_with_systemd}
@@ -66,7 +66,7 @@ EOF
 
 cat > %{buildroot}%{_unitdir}/%{name}.timer <<EOF
 [Unit]
-Description=Run Sanoid Every Minute
+Description=Run Sanoid Every 15 Minutes
 
 [Timer]
 OnCalendar=*:0/15

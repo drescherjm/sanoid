@@ -46,6 +46,7 @@ sudo systemctl enable --now sanoid.timer
 
 ## RHEL/CentOS/AlmaLinux
 
+**Manual Install:**
 Install prerequisite software:
 
 ```bash
@@ -74,7 +75,7 @@ Clone this repo, then put the executables and config files into the appropriate 
 
 ```bash
 # Download the repo as root to avoid changing permissions later
-sudo git clone https://github.com/jimsalterjrs/sanoid.git
+sudo git clone https://github.com/drescherjm/sanoid.git
 cd sanoid
 # checkout latest stable release or stay on master for bleeding edge stuff (but expect bugs!)
 git checkout $(git tag | grep "^v" | tail -n 1)
@@ -154,6 +155,26 @@ sudo systemctl enable --now sanoid.timer
 ```
 
 Now, proceed to configure [**Sanoid**](#configuration)
+
+**RPM Install**
+# Download the repo as a regular user
+git clone https://github.com/drescherjm/sanoid.git
+
+# Install rpm-build
+```bash
+sudo dnf install rpm-build
+```
+
+# Build the rpm:
+```bash
+cd sanoid
+rpmbuild --undefine=_disable_source_fetch -ba packages/rhel/sanoid.spec
+```
+
+# Install the rpm:
+```bash
+ sudo dnf localinstall ~/rpmbuild/RPMS/noarch/sanoid-2.2.0.2-r1.el8.noarch.rpm
+```
 
 ## FreeBSD
 

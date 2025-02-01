@@ -3,11 +3,11 @@
 
 EAPI=7
 
-EGIT_REPO_URI="https://github.com/jimsalterjrs/${PN}.git"
+EGIT_REPO_URI="https://github.com/drescherjm/${PN}.git"
 inherit git-r3
 
 DESCRIPTION="Policy-driven snapshot management and replication tools for ZFS"
-HOMEPAGE="https://github.com/jimsalterjrs/sanoid"
+HOMEPAGE="https://github.com/drescherjm/sanoid"
 
 LICENSE="GPL-3.0"
 SLOT="0"

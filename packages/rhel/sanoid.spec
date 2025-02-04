@@ -1,5 +1,5 @@
 %global git_release 1
-%global version 2.2.0.5
+%global version 2.2.0.6
 %global git_tag v%{version}
 
 # Enable with systemctl "enable sanoid.timer"
